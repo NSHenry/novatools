@@ -62,10 +62,17 @@ scancode_table2 = [0x00, 0x35, 0x1E, 0x1F, 0x20, 0x21, 0x22, 0x23,
                    0x00, 0x80, 0x00, 0x00]
 
 # See README for full id => key mapping
-key_id_ctrl = 17
-key_id_caps = 20
-key_id_backspace = 112
-key_id_backslash = 117
+# key_id_ctrl = 17
+# key_id_caps = 20
+# key_id_backspace = 112
+# key_id_backslash = 117
+
+#Let's map the keys we want to swap
+key_id_alt_l = 2
+key_id_super_l = 10
+key_id_alt_r = 73
+key_id_super_r = 87
+
 
 # Hex offsets to scancode tables in the raw original fw. These tables
 # will be overwritten by our modified tables above
@@ -110,11 +117,20 @@ def write_jump_to_bsl():
 
 if __name__ == '__main__':
     # Remap caps to ctrl
-    scancode_table1[key_id_caps] = scancode_table1[key_id_ctrl]
+    # scancode_table1[key_id_caps] = scancode_table1[key_id_ctrl]
 
     # Switch down backspace to \ and \ to backspace
-    scancode_table1[key_id_backspace], scancode_table1[key_id_backslash] = \
-        scancode_table1[key_id_backslash], scancode_table1[key_id_backspace]
+    # scancode_table1[key_id_backspace], scancode_table1[key_id_backslash] = \
+        # scancode_table1[key_id_backslash], scancode_table1[key_id_backspace]
+
+    # Switch the left alt and super
+    scancode_table1[key_id_alt_l], scancode_table1[key_id_super_l] = \
+        scancode_table1[key_id_super_l], scancode_table1[key_id_alt_l]
+
+    # Switch the right alt and super
+    scancode_table1[key_id_alt_r], scancode_table1[key_id_super_r] = \
+        scancode_table1[key_id_super_r], scancode_table1[key_id_alt_r]
+
 
     parser = argparse.ArgumentParser(
         description='Patch utility for Novatouch TKL firmware')
