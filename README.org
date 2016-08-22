@@ -54,6 +54,11 @@ understandable with the overly commented code.
 This a table representation of the actual key matrix. The row is the
 lowest 3 bits of key id and the column is the 4 bits above that
 (id = xCCCCRRR). I.e. ~tab = 5 + (2<<3) = 21~.
+
+Note: I'm too stupid to understand the above notation.
+The formula that works for me is (R(C-1))+R+1.
+C acts as the last full column and the 1 is set to offset that it starts at row 0.
+
 #+ATTR_HTML: :border 2 :rules all :frame border
 |         | 0     | 1       | 2       | 3 | 4   | 5 | 6   | 7 | 8  | 9  | 10 | 11    | 12       | 13      | 14     | 15      |
 |---------+-------+---------+---------+---+-----+---+-----+---+----+----+----+-------+----------+---------+--------+---------|
