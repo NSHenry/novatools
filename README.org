@@ -16,7 +16,7 @@ Make sure you store a copy of your original firmware safely.
 - mspdebug
 - Python
 ** Hardware
-Connect MSP430 programmer with Spy-Bi-Wire to the GNS, TEST, RST on
+Connect MSP430 programmer with Spy-Bi-Wire to the GND, TEST, RST on
 the Novatouch programming connector (CN2):
 
 #+begin_src
