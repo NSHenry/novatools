@@ -1,4 +1,4 @@
-#include <intrinsics.h>
+//#include <intrinsics.h>
 #include <msp430f5510.h>
 
 // Declare pointers to variables we access in Novatouch fw

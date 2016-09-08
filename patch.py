@@ -67,11 +67,11 @@ scancode_table2 = [0x00, 0x35, 0x1E, 0x1F, 0x20, 0x21, 0x22, 0x23,
 # key_id_backspace = 112
 # key_id_backslash = 117
 
-#Let's map the keys we want to swap
-key_id_alt_l = 2
-key_id_super_l = 10
-key_id_alt_r = 73
-key_id_super_r = 87
+# Let's map the keys we want to swap
+key_id_alt_l = 1
+key_id_super_l = 9
+key_id_alt_r = 89
+key_id_super_r = 105
 
 
 # Hex offsets to scancode tables in the raw original fw. These tables
