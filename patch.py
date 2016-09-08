@@ -67,7 +67,7 @@ scancode_table2 = [0x00, 0x35, 0x1E, 0x1F, 0x20, 0x21, 0x22, 0x23,
 # key_id_backspace = 112
 # key_id_backslash = 117
 
-# Let's map the keys we want to swap
+# Let's map the keys I want to swap
 key_id_alt_l = 1
 key_id_super_l = 9
 key_id_alt_r = 89
@@ -106,9 +106,9 @@ def original_fw_valid(path):
         return m.hexdigest() == orig_fw_md5
 
 def write_jump_to_bsl():
-    '''Make fn + F1 + F4 jump to BSL (firmware update mode)'''
+    '''Make fn + F1 + F2 jump to BSL (firmware update mode)'''
     # Replace mov instruction with a call to our own code for checking
-    # which F keys are currently pressed. If fn + F1 + F4 is pressed
+    # which F keys are currently pressed. If fn + F1 + F2 is pressed
     # jump to 0x1000 (BSL entry addr).
 
     # bytecode for asm 'call 0xa780; nop'
