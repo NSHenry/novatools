@@ -1,20 +1,21 @@
-* Novatools
+* Novatools - OSX Modifier Edition
 This is a collection of tools for reading, patching and flashing the
 Novatouch TKL firmware.
 ** Disclaimer
-This is just a quick hack that was developed by vekkt0r, only tested by him.
-I forked it, modified it to make a Mac layout novatouch, and went on my way. It is very
-dependant on a specific version of the firmware and if your keyboard
+This is just a quick hack that was originally developed by vekkt0r, and only tested by him.
+I forked it, modified it to make a Mac layout Novatouch, and went on my way. It is very
+dependent on a specific version of the firmware and if your keyboard
 has another firmware things will most probably break. The checksum of
 the original firmware will be checked before patching. If checksum
 differs the patching will fail.
 
-It is possible you will brick your keyboard by using these tools.
+NSHenry Note: It's worth mentioning that I bought this keyboard a good year and a half after vekkt0r and my firmware passed the checksum.
+
+Still... it is possible you will brick your keyboard by using these tools.
 
 Make sure you store a copy of your original firmware safely.
 ** Pre-requisites
-- MSP430 toolchain - I included the last released version of osx-launchpad since I was
-a TON of trouble compiling from source. This version worked for me on OS X El Capitan 10.11.6
+- MSP430 toolchain - Last released version of osx-launchpad is included since I was having a TON of trouble compiling from source. This version worked for me on OS X El Capitan 10.11.6.
 - mspdebug - Comes with above package.
 - Python
 ** Hardware
@@ -42,8 +43,8 @@ This will fetch the original firmware (main flash only), do some
 patching, and then flash the patched firmware back to the Novatouch.
 
 The patches done by default are:
-- Switch place of the 'Alt' and 'Super' keys to make it easier when swiltching between iOS and OS X devices.
-- Add hook function for entering BSL (bootloader) mode with Fn + F1 + F2
+- Switch place of the 'Alt' and 'Super' keys to make it easier when switching between iOS and OS X devices.
+- Add hook function for entering BSL (bootloader) mode with Fn + F1 + F2.
 
 Flashing via BSL is not yet tested because the HID driver on OS X
 promptly refuses to recognize the keyboard when in that mode. "Should"
